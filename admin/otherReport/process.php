@@ -23,7 +23,7 @@
         // if the input file has a value
         if (empty($error)) {
             if(move_uploaded_file($_FILES["report"]["tmp_name"], $target_file)) {
-                    mysqli_query($db, "INSERT INTO financialReport (report) VALUES ('$report')");
+                    mysqli_query($db, "INSERT INTO otherReports (report) VALUES ('$report')");
             } else {
                 $error = "There was an error uploading the file";
                 $msg = "alert-danger";
@@ -31,11 +31,11 @@
         }
         // and if no value
         // the variable picture include here because if it has a image attach, it will insert to database
-        $query = "INSERT INTO financialReport (sYear, sem, report, uploadDate) VALUES ('$sYear', '$sem', '$report', '$uploadDate')";
+        $query = "INSERT INTO otherReports (sYear, sem, report, uploadDate) VALUES ('$sYear', '$sem', '$report', '$uploadDate')";
         mysqli_query($db, $query);
 
         // echo '<script>window.location="../home.php"</script>';
-         header("location: ../financialReport");
+         header("location: ../otherReport");
          $_SESSION['status'] = "Woo hoo!";
           $_SESSION['text'] = "Report added successfully!";
         $_SESSION['status_code'] = "success";
@@ -44,8 +44,8 @@
 
            if (isset($_GET['del'])) {
             $id = $_GET['del'];
-             mysqli_query($db, "DELETE FROM financialReport WHERE id=$id");
-            header('location: ../financialReport');
+             mysqli_query($db, "DELETE FROM otherReports WHERE id=$id");
+            header('location: ../otherReport');
             $_SESSION['status'] = "Woo hoo!";
             $_SESSION['text'] = "Report deleted successfully!";
             $_SESSION['status_code'] = "success";

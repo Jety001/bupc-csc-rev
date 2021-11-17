@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 17, 2021 at 05:39 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Host: localhost
+-- Generation Time: Nov 17, 2021 at 06:51 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -81,6 +81,27 @@ INSERT INTO `files` (`id`, `sYear`, `report`, `sem`, `uploadDate`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `financialReport`
+--
+
+CREATE TABLE `financialReport` (
+  `id` int(11) NOT NULL,
+  `report` varchar(255) NOT NULL,
+  `sem` varchar(255) NOT NULL,
+  `sYear` varchar(255) NOT NULL,
+  `uploadDate` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `financialReport`
+--
+
+INSERT INTO `financialReport` (`id`, `report`, `sem`, `sYear`, `uploadDate`) VALUES
+(2, '', 'sadasd', 'asdasd', 'Wed Nov 17, 2021');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `logs`
 --
 
@@ -98,7 +119,8 @@ CREATE TABLE `logs` (
 
 INSERT INTO `logs` (`id`, `username`, `date`, `login`, `logout`) VALUES
 (1, 'treas', 'Tue Nov 16, 2021', '11:31: PM', '12:40 AM'),
-(2, 'treas', 'Wed Nov 17, 2021', '10:01: AM', NULL);
+(2, 'treas', 'Wed Nov 17, 2021', '10:01: AM', NULL),
+(3, 'President', 'Wed Nov 17, 2021', '01:22: PM', NULL);
 
 -- --------------------------------------------------------
 
@@ -140,6 +162,20 @@ INSERT INTO `officers` (`id`, `name`, `picture`, `buEmail`, `position`, `yearLev
 (16, 'Ralph Jessie M. Oco', 'Rep9.jpg', 'dsad', 'Representative', 'dsa', 'dsa', 'dsad'),
 (17, 'Cyrill Junne M. Regilme', 'Rep10.jpg', 'sad', 'Representative', 'dsa', 'das', 'dsa'),
 (18, 'Chinchin O. Lim', 'Rep11.jpg', 'dasd', 'Representative', 'das', 'das', 'dsa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `otherReports`
+--
+
+CREATE TABLE `otherReports` (
+  `id` int(11) NOT NULL,
+  `report` varchar(255) NOT NULL,
+  `sem` varchar(255) NOT NULL,
+  `sYear` varchar(255) NOT NULL,
+  `uploadDate` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -211,6 +247,12 @@ ALTER TABLE `files`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `financialReport`
+--
+ALTER TABLE `financialReport`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `logs`
 --
 ALTER TABLE `logs`
@@ -220,6 +262,12 @@ ALTER TABLE `logs`
 -- Indexes for table `officers`
 --
 ALTER TABLE `officers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `otherReports`
+--
+ALTER TABLE `otherReports`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -251,16 +299,28 @@ ALTER TABLE `files`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `financialReport`
+--
+ALTER TABLE `financialReport`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `officers`
 --
 ALTER TABLE `officers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `otherReports`
+--
+ALTER TABLE `otherReports`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `studentsacc`

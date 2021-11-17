@@ -15,7 +15,7 @@ scrollbar-width: none;  /* Firefox */
 <div class="  gap-5 py-10 container">
     <div class="bg-white md:rounded-lg lg:rounded-lg h-96 w-full p-6 shadow-sm">
     <!-- start -->  
-        <div class=" items-center pb-2">
+        <div class="flex justify-between items-center pb-2">
             <h1 class="font-medium text-gray-700  " styke="top:40px">Accomplishment <span class="text-yellow-400">Reports</span></h1>
             <div class="flex gap-3 items-center">
                 <!-- <a class="relative py-1 px-3 bg-yellow-400 rounded text-white hover:bg-yellow-300 transition-all" >

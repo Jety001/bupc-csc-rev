@@ -8,7 +8,11 @@ include('../../conn.php');
 $ID = $_SESSION['id'];
 $users = mysqli_query($db, "SELECT * FROM users");
 $officers = mysqli_query($db, "SELECT * FROM officers");
+// reports
 $files = mysqli_query($db, "SELECT * FROM files");
+$fReports = mysqli_query($db, "SELECT * FROM financialReport");
+$oReports = mysqli_query($db, "SELECT * FROM otherReports");
+// end
 $userlogs = mysqli_query($db, "SELECT * FROM logs");
 $events = mysqli_query($db, "SELECT * FROM events");
 // use for modals

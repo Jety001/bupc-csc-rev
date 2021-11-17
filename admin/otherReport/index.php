@@ -5,11 +5,11 @@
  $header=$view; 
 switch ($view) {
 	case 'list' :
-		$content    = 'fReport.php';		
+		$content    = 'oReport.php';		
 		break;
 
 	default :
-		$content    = 'fReport.php';		
+		$content    = 'oReport.php';		
 }
 require_once ("../templates/template.php");
 

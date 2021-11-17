@@ -16,7 +16,7 @@ scrollbar-width: none;  /* Firefox */
     <div class="bg-white md:rounded-lg lg:rounded-lg h-96 w-full p-6 shadow-sm">
     <!-- start -->  
          <div class="flex justify-between items-center pb-2">
-            <h1 class="font-medium text-gray-700  " styke="top:40px">Financial <span class="text-yellow-400">Reports</span></h1>
+            <h1 class="font-medium text-gray-700  " styke="top:40px">Other <span class="text-yellow-400">Reports</span></h1>
             <div class="flex gap-3 items-center">
                 <!-- <a class="relative py-1 px-3 bg-yellow-400 rounded text-white hover:bg-yellow-300 transition-all" >
                         <div class="flex items-center gap-2">
@@ -71,7 +71,7 @@ scrollbar-width: none;  /* Firefox */
                     </th>
                 </tr>
             </thead>
-            <?php while ($row = mysqli_fetch_array($fReports)) { ?>
+            <?php while ($row = mysqli_fetch_array($oReports)) { ?>
 
             <tbody class=" divide-y divide-gray-200 overflow-auto text-gray-700">
                 <tr>
