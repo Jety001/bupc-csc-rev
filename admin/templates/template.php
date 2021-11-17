@@ -163,7 +163,7 @@ if (isset($_SESSION['id']) && (isset($_SESSION['username']))) {
                         <a href="../home" class="text-black-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Home</a>
                         <a href="../events" class="text-black-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Events</a>
                         <!-- <a href="../reports" class="text-black-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Reports</a> -->
-                        <button class="text-black-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all" type="button" onclick="openDropdown(event,'dropdown-example-1')">
+                        <button class="text-black-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all" style="font-size: 13px" type="button" onclick="openDropdown(event,'dropdown-example-1')">
                                 Reports<i class="fas fa-angle-down ml-1"></i>
                             </button>
                             <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width: 12rem" id="dropdown-example-1">

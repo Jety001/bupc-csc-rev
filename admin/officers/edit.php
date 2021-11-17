@@ -181,10 +181,10 @@ $getOfficers = mysqli_query($db, "SELECT * FROM officers WHERE id=$id");
                             <p class="text-sm">Name <span class="text-red-500">*</span></p>
                             <input type="text" value="<?php echo $row['name'] ?>" autocomplete="off" name="name" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                         </div>
-                        <div class="flex gap-3">
+                        <!-- <div class="flex"> -->
                             <div class="space-y-2">
                                 <p class="text-sm">Course<span class="text-red-500">*</span></p>
-                                <select class="rounded" name="course" style="padding: 9px; width: 90%; background:#F3F4F6 " required>
+                                <select class="rounded" name="course" style="padding: 9px; width: 100%; background:#F3F4F6; font-size: 16px " required>
                                     <option value="<?php echo $row['course']; ?>" selected hidden><?php echo $row['course']; ?></option>
                                     <option value="BS Automotive Technology">BS Automotive Technology</option>
                                     <option value="BS Electrical Technology">BS Electrical Technology</option>
@@ -203,38 +203,35 @@ $getOfficers = mysqli_query($db, "SELECT * FROM officers WHERE id=$id");
                                     <option value="BS Information System">BS Information System</option>
                                     <option value="BS Information Technology">BS Information Technology</option>
                                     <option value="BS Information Technology (Animation)">BS Information Technology (Animation)</option>
-                                   
-        
                                 </select>
                             </div>
-                            <div class="space-y-2">
-                                <p class="text-sm">Year Level <span class="text-red-500">
-
-                                </span></p>
-                               
-                                <select class="rounded" name="yearLevel" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
-                                    <option value="<?php echo $row['yearLevel']; ?>" selected hidden><?php echo $row['yearLevel']; ?></option>
-                                    <option value="1st Year">1st Year</option>
-                                    <option value="2nd Year">2nd Year</option>
-                                    <option value="3rd Year">3rd Year</option>
-                                    <option value="4th Year">4th Year</option>
-                                    
-                                </select>
+                            <div class="flex items-center gap-3 w-full">
+                                <div class="space-y-2 w-full">
+                                    <p class="text-sm">Year Level <span class="text-red-500"></span></p>
+                                    <select class="rounded" name="yearLevel" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
+                                        <option value="<?php echo $row['yearLevel']; ?>" selected hidden><?php echo $row['yearLevel']; ?></option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2 w-full">
+                                    <p class="text-sm">Position<span class="text-red-500"></span></p>
+                                    <select class="rounded" name="position" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
+                                        <option value="<?php echo $row['position']; ?>" selected hidden><?php echo $row['position']; ?></option>
+                                        <option value="President">President</option>
+                                        <option value="Vice President">Vice President</option>
+                                        <option value="Secretary">Secretary</option>
+                                        <option value="Treasurer">Treasurer</option>
+                                        <option value="Auditor">Auditor</option>
+                                        <option value="Business Manager">Business Manager</option>
+                                        <option value="P.I.O">P.I.O</option>
+                                        <option value="Representative">Representative</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="space-y-2">
-                            <select class="rounded" name="position" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
-                                <option value="<?php echo $row['position']; ?>" selected hidden><?php echo $row['position']; ?></option>
-                                <option value="President">President</option>
-                                <option value="Vice President">Vice President</option>
-                                <option value="Secretary">Secretary</option>
-                                <option value="Treasurer">Treasurer</option>
-                                <option value="Auditor">Auditor</option>
-                                <option value="Business Manager">Business Manager</option>
-                                <option value="P.I.O">P.I.O</option>
-                                <option value="Representative">Representative</option>
-                            </select>
-                        </div>
+                            
                         <div class="space-y-2">
                             <p class="text-sm">BU Email <span class="text-red-500">*</span></p>
                             <input type="text" value="<?php echo $row['buEmail'] ?>" autocomplete="off" name="buEmail" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">

@@ -27,7 +27,7 @@
         }
         // pag goods su name and pass amo kadi maga execute na code
         else{
-            $sql = "SELECT * FROM studentsAcc WHERE name='$name' AND studentId='$studentId'";
+            $sql = "SELECT * FROM studentsacc WHERE name='$name' AND studentId='$studentId'";
 
             $result = mysqli_query($db, $sql);
             if(mysqli_num_rows($result)) {

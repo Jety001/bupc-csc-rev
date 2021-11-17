@@ -19,7 +19,7 @@ scrollbar-width: none;  /* Firefox */
                            <p class="text-gray-400 py-5 text-sm lg:text-base">Hello administrator. Good day !! Click the button to access our official website . Thank you!</p>
                             <a href="../../index.php" class="py-2 px-5 bg-yellow-400 rounded text-white hover:bg-yellow-300 transition-all">Official website</a>
                         </div>
-                        <div class="w-2/4 hidden lg:block">
+                        <div class="hidden lg:block" style="width: 340px">
                             <img class="rounded" src="../images/logo.jpg" alt="" style="width: 100%">
                         </div>
                     </div>
