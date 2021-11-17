@@ -11,7 +11,7 @@
                     </a>
                 </div>
                 <div class="overflow-y-auto example" style="height: 470px">
-                    <form action="../officers/process.php" method="post" class="space-y-2 text-sm md:text-base lg:text-base" enctype="multipart/form-data">
+                    <form action="./process.php" method="POST" class="space-y-2 text-sm md:text-base lg:text-base" enctype="multipart/form-data">
                         <div class="flex justify-center">
                             <div class="space-y-4 relative">
                                 <div class="rounded-full overflow-hidden" style="width: 140px; height: 140px;">
@@ -37,6 +37,7 @@
                             <div class="space-y-2">
                                 <p class="text-sm">Course<span class="text-red-500">*</span></p>
                                 <select class="rounded" name="course" style="padding: 9px; width: 100%; background:#F3F4F6; font-size: 16px " required>
+                                    <option class="text-sm" value="" disabled selected hidden>Course</option>
                                     <option class="text-sm" value="BS Automotive Technology">BS Automotive Technology</option>
                                     <option class="text-sm" value="BS Electrical Technology">BS Electrical Technology</option>
                                     <option class="text-sm" value="BS Entrepreneurship">BS Entrepreneurship</option>
@@ -60,6 +61,7 @@
                                 <div class="space-y-2 w-full">
                                     <p class="text-sm">Year Level <span class="text-red-500"></span></p>
                                     <select class="rounded" name="yearLevel" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
+                                        <option value="" disabled selected hidden>Year level</option>
                                         <option value="1st Year">1st Year</option>
                                         <option value="2nd Year">2nd Year</option>
                                         <option value="3rd Year">3rd Year</option>
@@ -69,6 +71,7 @@
                                 <div class="space-y-2 w-full">
                                     <p class="text-sm">Position<span class="text-red-500"></span></p>
                                     <select class="rounded" name="position" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
+                                        <option value="" disabled selected hidden>Position</option>
                                         <option value="President">President</option>
                                         <option value="Vice President">Vice President</option>
                                         <option value="Secretary">Secretary</option>

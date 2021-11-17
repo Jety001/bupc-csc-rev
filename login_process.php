@@ -6,7 +6,7 @@
     session_start();
     include "conn.php";
 
-    if(isset($_POST['name']) && isset($_POST['studentId'])) {
+    if(isset($_POST['username']) && isset($_POST['password'])) {
         function validate($data){
             $data = trim($data);
             $data = stripslashes($data);
@@ -14,26 +14,26 @@
             return $data;
         }
 
-        $name = validate($_POST['name']);
-        $studentId = validate($_POST['studentId']);
+        $username = validate($_POST['username']);
+        $password = validate($_POST['password']);
     
 
-        if (empty($name)) {
-            header("Location: index.php?error=name is required");
+        if (empty($username)) {
+            header("Location: index.php?error=username is required");
             exit();
-        } else if(empty($studentId)){
+        } else if(empty($password)){
             header("Location: index.php?error=Password is required");
             exit();
         }
-        // pag goods su name and pass amo kadi maga execute na code
+        // pag goods su username and pass amo kadi maga execute na code
         else{
-            $sql = "SELECT * FROM studentsacc WHERE name='$name' AND studentId='$studentId'";
+            $sql = "SELECT * FROM officers WHERE username='$username' AND password='$password'";
 
             $result = mysqli_query($db, $sql);
             if(mysqli_num_rows($result)) {
 
                     $row = mysqli_fetch_assoc($result);
-                    $_SESSION['name'] = $row['name'];
+                    $_SESSION['username'] = $row['username'];
                     $_SESSION['id'] = $row['id'];
 
                     header('location: index.php');
@@ -42,7 +42,7 @@
                     $_SESSION['text'] = "Login successfull!";
                 }
                     else{
-                    header("Location: index.php?error=name and studentId not match");
+                    header("Location: index.php?error=username and password not match");
                     $_SESSION['status'] = "Oopss!";
                     $_SESSION['img'] = "https://assets.website-files.com/5b5f4cc1bb5a8369e423e901/5f6511fb6158287d9188ebb1_ugging_his_shoulders_1200x628_091020.svg";
                     $_SESSION['text'] = "Please check your inputs";

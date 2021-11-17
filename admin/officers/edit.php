@@ -240,6 +240,16 @@ $getOfficers = mysqli_query($db, "SELECT * FROM officers WHERE id=$id");
                             <p class="text-sm">Facebook<span class="text-red-500">*</span></p>
                             <input type="text" value="<?php echo $row['fb'] ?>" autocomplete="off" name="fb" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                         </div>
+                        <div class="flex gap-3">
+                            <div class="space-y-2">
+                                <p class="text-sm">Username<span class="text-red-500">*</span></p>
+                                <input type="text" value="<?php echo $row['username']?>" autocomplete="off" name="username" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                            </div>
+                            <div class="space-y-2">
+                            <p class="text-sm">Password<span class="text-red-500">*</span></p>
+                                <input type="text" value="<?php echo $row['password']?>" autocomplete="off" name="password" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                            </div>
+                        </div>
                         <div class="flex justify-center">
                             <div style="font-size: 14px">
                                 <a href="../officers" class="px-6 py-2 bg-gray-100 rounded text-gray-500">

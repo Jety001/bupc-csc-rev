@@ -12,6 +12,8 @@
         $yearLevel = $_POST['yearLevel'];
         $buEmail = $_POST['buEmail'];
         $fb = $_POST['fb'];
+         $username = $_POST['username'];
+        $password = $_POST['password'];
         $picture = $_FILES["profileImage"]["name"];
         $target_dir = "./upload/";
         $target_file = $target_dir . basename($picture);
@@ -32,12 +34,16 @@
                 $msg = "alert-danger";
             }
         }
-        $query = "UPDATE officers SET name='$name', position='$position', course='$course', yearLevel='$yearLevel', buEmail='$buEmail', fb='$fb' WHERE id=$id";
+        $query = "UPDATE officers SET name='$name', position='$position', course='$course', yearLevel='$yearLevel', buEmail='$buEmail', fb='$fb', username='$username', password='$password' WHERE id=$id";
         mysqli_query($db, $query);
+          header("location: ../officers/");
+         $_SESSION['status'] = "Woo hoo!";
+          $_SESSION['text'] = "Updated successfully!";
+        $_SESSION['status_code'] = "success";
         header('location: ../officers/');
     }
 
-       if(isset($_POST['add'])){
+       if (isset($_POST['add'])) {
 
         $name = $_POST['name'];
         $position = $_POST['position'];
