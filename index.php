@@ -100,10 +100,10 @@
                  <a href="./reports/index.php" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100">
                      Accomplishment Reports
                  </a>
-                 <a href="../reports" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100">
+                 <a href="./reports/financial.php" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100">
                      Financial Reports
                  </a>
-                 <a href="../reports" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100">
+                 <a href="./reports/other.php" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100">
                      Other Reports
                  </a>
              </div>

@@ -121,13 +121,13 @@
                  Reports<i class="fas fa-angle-down ml-1"></i>
              </button>
              <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width: 12rem" id="dropdown-example-1">
-                 <a href="../reports" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100">
+                 <a href="./reports/index.php" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100">
                      Accomplishment Reports
                  </a>
-                 <a href="../reports" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100">
+                 <a href="./reports/financial.php" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100">
                      Financial Reports
                  </a>
-                 <a href="../reports" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100">
+                 <a href="./reports/other.php" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100">
                      Other Reports
                  </a>
              </div>';
