@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 17, 2021 at 06:51 AM
+-- Generation Time: Nov 17, 2021 at 11:32 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -118,9 +118,8 @@ CREATE TABLE `logs` (
 --
 
 INSERT INTO `logs` (`id`, `username`, `date`, `login`, `logout`) VALUES
-(1, 'treas', 'Tue Nov 16, 2021', '11:31: PM', '12:40 AM'),
-(2, 'treas', 'Wed Nov 17, 2021', '10:01: AM', NULL),
-(3, 'President', 'Wed Nov 17, 2021', '01:22: PM', NULL);
+(1, 'Adviser', 'Wed Nov 17, 2021', '04:38: PM', '04:52 PM'),
+(2, 'Adviser', 'Wed Nov 17, 2021', '05:25: PM', NULL);
 
 -- --------------------------------------------------------
 
@@ -136,32 +135,35 @@ CREATE TABLE `officers` (
   `position` varchar(255) NOT NULL,
   `yearLevel` varchar(255) NOT NULL,
   `fb` varchar(255) NOT NULL,
-  `course` varchar(255) NOT NULL
+  `course` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `officers`
 --
 
-INSERT INTO `officers` (`id`, `name`, `picture`, `buEmail`, `position`, `yearLevel`, `fb`, `course`) VALUES
-(1, 'Joshua Miranda Boban', 'President.jpg', 'boban@gmail.com', 'President', '4th Year', 'boban juswaa', 'BSEd Math'),
-(2, 'Ma. Roseanne Pandaan', 'vp.jpeg', 'pandaan@gmail.com', 'Vice President', '4th year', 'pandaan uwu', 'BSED-English'),
-(3, 'Eddessa Joy Legson', 'Sec.jpg', '', 'Secretary', '4th Year', 'dsad', ''),
-(4, 'Bernadette Riofro Satuito', 'Trea.jpg', '', 'Treasurer', '4th Year', '', ''),
-(5, 'Josephine Marie A. Almuenia', 'Aud.jpg', '', 'Auditor', '4th year', '', ''),
-(6, 'John Boy Arellano Pante', 'bm.jpg', 'dasda', 'Business Manager', '4th year', 'adsda', 'BSIS-4B'),
-(7, 'Hannah Paula', 'Pio.jpg', 'dasdas', 'P.I.O', 'adsd', 'asdas', 'dsad'),
-(8, 'Tricia Kaye T. Moya', 'Rep1.jpg', 'dasdsad', 'Representative', 'sadas', 'dasda', 'asdas'),
-(9, 'Stephanie  L. Tolosa', 'Rep2.jpg', 'dasda', 'Representative', 'asdas', 'dasdas', 'dsada'),
-(10, 'Ramius C. Aquiler', 'Rep3.jpg', 'dasd', 'Representative', 'dsad', 'dsad', 'sadsad'),
-(11, 'Vince G. Pagdagdagan', 'Rep4.jpg', 'sdaasd', 'Representative', 'dasd', 'dsada', 'dasd'),
-(12, 'Jodelyn P. Mendoza', 'rep5.jpg', 'dsadas', 'Representative', 'dsad', 'asd', 'dasd'),
-(13, 'Riena Marie Nimo', 'Rep6.jpg', 'dasd', 'Representative', 'sdadas', 'dasd', 'dsa'),
-(14, 'Stephanie J. Allorde', 'rep7.jpg', '', 'Representative', 'sadd', 'dsad', 'das'),
-(15, 'Dave L. Sulit', 'Rep8.jpg', 'dasd', 'Representative', 'dsad', 'dsad', 'das'),
-(16, 'Ralph Jessie M. Oco', 'Rep9.jpg', 'dsad', 'Representative', 'dsa', 'dsa', 'dsad'),
-(17, 'Cyrill Junne M. Regilme', 'Rep10.jpg', 'sad', 'Representative', 'dsa', 'das', 'dsa'),
-(18, 'Chinchin O. Lim', 'Rep11.jpg', 'dasd', 'Representative', 'das', 'das', 'dsa');
+INSERT INTO `officers` (`id`, `name`, `picture`, `buEmail`, `position`, `yearLevel`, `fb`, `course`, `username`, `password`) VALUES
+(1, 'Joshua Miranda Boban', 'President.jpg', 'boban@gmail.com', 'President', '4th Year', 'boban juswaa', 'BSEd Math', 'dfdsf', 'dsfsdf'),
+(2, 'Ma. Roseanne Pandaan', 'vp.jpeg', 'pandaan@gmail.com', 'Vice President', '4th year', 'pandaan uwu', 'BSED-English', '', ''),
+(3, 'Eddessa Joy Legson', 'Sec.jpg', '', 'Secretary', '4th Year', 'dsad', '', '', ''),
+(4, 'Bernadette Riofro Satuito', 'Trea.jpg', '', 'Treasurer', '4th Year', '', '', '', ''),
+(5, 'Josephine Marie A. Almuenia', 'Aud.jpg', '', 'Auditor', '4th year', '', '', '', ''),
+(6, 'John Boy Arellano Pante', 'bm.jpg', 'dasda', 'Business Manager', '4th year', 'adsda', 'BSIS-4B', '', ''),
+(7, 'Hannah Paula', 'Pio.jpg', 'dasdas', 'P.I.O', 'adsd', 'asdas', 'dsad', '', ''),
+(8, 'Tricia Kaye T. Moya', 'Rep1.jpg', 'dasdsad', 'Representative', 'sadas', 'dasda', 'asdas', '', ''),
+(9, 'Stephanie  L. Tolosa', 'Rep2.jpg', 'dasda', 'Representative', 'asdas', 'dasdas', 'dsada', '', ''),
+(10, 'Ramius C. Aquiler', 'Rep3.jpg', 'dasd', 'Representative', 'dsad', 'dsad', 'sadsad', '', ''),
+(11, 'Vince G. Pagdagdagan', 'Rep4.jpg', 'sdaasd', 'Representative', 'dasd', 'dsada', 'dasd', '', ''),
+(12, 'Jodelyn P. Mendoza', 'rep5.jpg', 'dsadas', 'Representative', 'dsad', 'asd', 'dasd', '', ''),
+(13, 'Riena Marie Nimo', 'Rep6.jpg', 'dasd', 'Representative', 'sdadas', 'dasd', 'dsa', '', ''),
+(14, 'Stephanie J. Allorde', 'rep7.jpg', '', 'Representative', 'sadd', 'dsad', 'das', '', ''),
+(15, 'Dave L. Sulit', 'Rep8.jpg', 'dasd', 'Representative', 'dsad', 'dsad', 'das', '', ''),
+(16, 'Ralph Jessie M. Oco', 'Rep9.jpg', 'dsad', 'Representative', 'dsa', 'dsa', 'dsad', '', ''),
+(17, 'Cyrill Junne M. Regilme', 'Rep10.jpg', 'sad', 'Representative', 'dsa', 'das', 'dsa', '', ''),
+(18, 'Chinchin O. Lim', 'Rep11.jpg', 'dasd', 'Representative', 'das', 'das', 'dsa', '', ''),
+(19, 'dsad', NULL, 'sdasd', 'P.I.O', '3rd Year', 'dsad', 'BTLEd Information Communication Technology', 'as', 'dsads');
 
 -- --------------------------------------------------------
 
@@ -200,7 +202,6 @@ INSERT INTO `studentsacc` (`id`, `name`, `course`, `studentId`, `buEmail`, `setE
 (1, 'Dandy Diño', 'BSIS-4A', '2018-PC-100614', 'dandy.dino@bicol-u.edu.ph', 1),
 (2, 'Joshua Tolarba', 'Information System', '2018-PC-100824', 'joshuapago.tolarba@bicol-u.edu.ph', 1),
 (4, 'Paul Justine Pintang', 'BSIS-4A', '2018-PC-100757', 'pauljustineprena.pintang@bicol-u.edu.ph', 1),
-(5, 'Dandy Diño', 'BSIS-4A', '2018-PC-100614', 'dandy.dino@bicol-u.edu.ph', 1),
 (6, 'Jovi Mae Rempillo', 'BSIS 4A', '2018-PC-100797', 'jovimaeoraye.rempillo@bicol-u.edu.ph', 1);
 
 -- --------------------------------------------------------
@@ -224,11 +225,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `picture`, `role`, `status`) VALUES
-(36, 'Ben Saminiano', 'Adviser', 'adviser', 'Sir Ben Saminiano.jpg', 'Adviser', 'Offline'),
-(37, 'Joshua  Buban', 'president', 'president', 'President.jpg', 'President', 'Online'),
-(38, 'Eddessa Joy Ariño', 'secretary', 'secretary', 'Sec.jpg', 'Secretary', NULL),
-(39, 'Bernadette R. Satuito', 'treas', 'treas', 'Trea.jpg', 'Treasurer', 'Online'),
-(40, 'Josephine Marie A. Almuena', 'audit', 'audit', 'Aud.jpg', 'Auditor', 'Offline');
+(36, 'Ben Saminiano', 'Adviser', 'adviser', 'Sir Ben Saminiano.jpg', 'Adviser', 'Online');
 
 --
 -- Indexes for dumped tables
@@ -308,13 +305,13 @@ ALTER TABLE `financialReport`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `officers`
 --
 ALTER TABLE `officers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `otherReports`
