@@ -21,8 +21,19 @@ scrollbar-width: none;  /* Firefox */
                 <small class="text-gray-500 text-xs italic">Note: The list of  officers is in correct order!</small>
             </div>
             <div class="hidden md:flex lg:flex gap-1 items-center pb-3 font-normal">
-                <small class="text-yellow-300 font-semibold">Clock: </small>
-                <small class="text-gray-800" id='ct6'></small>
+                <!-- <small class="text-yellow-300 font-semibold">Clock: </small>
+                <small class="text-gray-800" id='ct6'></small> -->
+                <a href="#addOfficer" data-toggle="modal" class="py-1 px-3 bg-yellow-400 rounded text-white hover:bg-yellow-300 transition-all" >
+              <!-- <a href="#" class="py-1 px-3 bg-yellow-400 rounded text-white hover:bg-yellow-300 transition-all" onclick="toggleModal('event')"> -->
+                    <div class="flex items-center gap-2">
+                        <div>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div>
+                            <span>Add</span>
+                        </div>
+                    </div>
+             </a>
             </div>
         </div>
         <div class="overflow-y-auto example" style="height: 280px">
