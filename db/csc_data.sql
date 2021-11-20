@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 17, 2021 at 11:32 AM
+-- Generation Time: Nov 20, 2021 at 04:38 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -119,7 +119,9 @@ CREATE TABLE `logs` (
 
 INSERT INTO `logs` (`id`, `username`, `date`, `login`, `logout`) VALUES
 (1, 'Adviser', 'Wed Nov 17, 2021', '04:38: PM', '04:52 PM'),
-(2, 'Adviser', 'Wed Nov 17, 2021', '05:25: PM', NULL);
+(2, 'Adviser', 'Wed Nov 17, 2021', '05:25: PM', NULL),
+(3, 'Adviser', 'Thu Nov 18, 2021', '02:09: PM', NULL),
+(4, 'Adviser', 'Sat Nov 20, 2021', '10:37: PM', NULL);
 
 -- --------------------------------------------------------
 
@@ -129,13 +131,13 @@ INSERT INTO `logs` (`id`, `username`, `date`, `login`, `logout`) VALUES
 
 CREATE TABLE `officers` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `position` varchar(255) DEFAULT NULL,
+  `course` varchar(255) DEFAULT NULL,
+  `yearLevel` varchar(255) DEFAULT NULL,
+  `buEmail` varchar(255) DEFAULT NULL,
+  `fb` varchar(255) DEFAULT NULL,
   `picture` varchar(255) DEFAULT NULL,
-  `buEmail` varchar(255) NOT NULL,
-  `position` varchar(255) NOT NULL,
-  `yearLevel` varchar(255) NOT NULL,
-  `fb` varchar(255) NOT NULL,
-  `course` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -144,26 +146,9 @@ CREATE TABLE `officers` (
 -- Dumping data for table `officers`
 --
 
-INSERT INTO `officers` (`id`, `name`, `picture`, `buEmail`, `position`, `yearLevel`, `fb`, `course`, `username`, `password`) VALUES
-(1, 'Joshua Miranda Boban', 'President.jpg', 'boban@gmail.com', 'President', '4th Year', 'boban juswaa', 'BSEd Math', 'dfdsf', 'dsfsdf'),
-(2, 'Ma. Roseanne Pandaan', 'vp.jpeg', 'pandaan@gmail.com', 'Vice President', '4th year', 'pandaan uwu', 'BSED-English', '', ''),
-(3, 'Eddessa Joy Legson', 'Sec.jpg', '', 'Secretary', '4th Year', 'dsad', '', '', ''),
-(4, 'Bernadette Riofro Satuito', 'Trea.jpg', '', 'Treasurer', '4th Year', '', '', '', ''),
-(5, 'Josephine Marie A. Almuenia', 'Aud.jpg', '', 'Auditor', '4th year', '', '', '', ''),
-(6, 'John Boy Arellano Pante', 'bm.jpg', 'dasda', 'Business Manager', '4th year', 'adsda', 'BSIS-4B', '', ''),
-(7, 'Hannah Paula', 'Pio.jpg', 'dasdas', 'P.I.O', 'adsd', 'asdas', 'dsad', '', ''),
-(8, 'Tricia Kaye T. Moya', 'Rep1.jpg', 'dasdsad', 'Representative', 'sadas', 'dasda', 'asdas', '', ''),
-(9, 'Stephanie  L. Tolosa', 'Rep2.jpg', 'dasda', 'Representative', 'asdas', 'dasdas', 'dsada', '', ''),
-(10, 'Ramius C. Aquiler', 'Rep3.jpg', 'dasd', 'Representative', 'dsad', 'dsad', 'sadsad', '', ''),
-(11, 'Vince G. Pagdagdagan', 'Rep4.jpg', 'sdaasd', 'Representative', 'dasd', 'dsada', 'dasd', '', ''),
-(12, 'Jodelyn P. Mendoza', 'rep5.jpg', 'dsadas', 'Representative', 'dsad', 'asd', 'dasd', '', ''),
-(13, 'Riena Marie Nimo', 'Rep6.jpg', 'dasd', 'Representative', 'sdadas', 'dasd', 'dsa', '', ''),
-(14, 'Stephanie J. Allorde', 'rep7.jpg', '', 'Representative', 'sadd', 'dsad', 'das', '', ''),
-(15, 'Dave L. Sulit', 'Rep8.jpg', 'dasd', 'Representative', 'dsad', 'dsad', 'das', '', ''),
-(16, 'Ralph Jessie M. Oco', 'Rep9.jpg', 'dsad', 'Representative', 'dsa', 'dsa', 'dsad', '', ''),
-(17, 'Cyrill Junne M. Regilme', 'Rep10.jpg', 'sad', 'Representative', 'dsa', 'das', 'dsa', '', ''),
-(18, 'Chinchin O. Lim', 'Rep11.jpg', 'dasd', 'Representative', 'das', 'das', 'dsa', '', ''),
-(19, 'dsad', NULL, 'sdasd', 'P.I.O', '3rd Year', 'dsad', 'BTLEd Information Communication Technology', 'as', 'dsads');
+INSERT INTO `officers` (`id`, `name`, `position`, `course`, `yearLevel`, `buEmail`, `fb`, `picture`, `username`, `password`) VALUES
+(7, 'cdfds', 'P.I.O', 'BTLEd Information Communication Technology', '1st Year', 'dsad', 'sadasd', '', 'dsadasds', 'adasd'),
+(8, 'sda', 'Representative', 'BTLEd Information Communication Technology', '3rd Year', 'dsad', 'sad', '', 'dsad', 'asdas');
 
 -- --------------------------------------------------------
 
@@ -305,13 +290,13 @@ ALTER TABLE `financialReport`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `officers`
 --
 ALTER TABLE `officers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `otherReports`
