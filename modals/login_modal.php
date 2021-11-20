@@ -59,11 +59,11 @@
                      <input type="hidden" autocomplete="false">
                           <div class="space-y-2">
                               <p class="text-sm">Name <span class="text-red-500">*</span></p>
-                              <input type="text"  autocomplete="off" name="name" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                              <input type="text"  autocomplete="off" name="username" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                           </div>
                           <div class="space-y-2">
                               <p class="text-sm">StudentID<span class="text-red-500">*</span></p>
-                              <input type="text"  autocomplete="off" name="studentId" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                              <input type="text"  autocomplete="off" name="password" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                           </div>
                           
                           <div class="flex justify-center py-4">
