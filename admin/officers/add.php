@@ -15,10 +15,10 @@
                         <div class="flex justify-center">
                             <div class="space-y-4 relative">
                                 <div class="rounded-full overflow-hidden" style="width: 140px; height: 140px;">
-                                        <img class="h-10 w-10 rounded-full" src="../images/user1.png" alt="" style="object-fit: cover; width: 100%; height: 100%" name="picture" onClick="triggerClick()" id="profileDisplay">
+                                        <img class="h-10 w-10 rounded-full" src="../images/user1.png" alt="" style="object-fit: cover; width: 100%; height: 100%" name="picture" onClick="triggerClick1()" id="profileDisplay1">
                                 </div>
                                 <div class="absolute top-3 opacity-0">
-                                    <input type="file" name="profileImage" class="py-8" onChange="displayImage(this)" id="profileImage">
+                                    <input type="file" name="profileImage" class="py-8" onChange="displayImage1(this)" id="profileImage1">
                                 </div>
                             </div>
                         </div>

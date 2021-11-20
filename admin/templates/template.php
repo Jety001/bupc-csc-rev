@@ -234,6 +234,23 @@ if (isset($_SESSION['id']) && (isset($_SESSION['username']))) {
                 }
             }
         </script>
+        <script>
+            function triggerClick1(e) {
+                document.querySelector("#profileImage1").click();
+            }
+
+            function displayImage1(e) {
+                if (e.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        document
+                            .querySelector("#profileDisplay1")
+                            .setAttribute("src", e.target.result);
+                    };
+                    reader.readAsDataURL(e.files[0]);
+                }
+            }
+        </script>
         <!-- Required popper.js -->
         <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
         <script>
