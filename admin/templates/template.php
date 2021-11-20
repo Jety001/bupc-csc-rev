@@ -207,6 +207,7 @@ if (isset($_SESSION['id']) && (isset($_SESSION['username']))) {
         <div><?php include '../modals/user_edit_modal.php'; ?></div>
         <div><?php include '../modals/user_add_modal.php'; ?></div>
         <div><?php include '../modals/about_modal.php'; ?></div>
+        <div><?php include '../officers/add.php'; ?></div>
         <div><?php include '../reports/modal/add_report_modal.php'; ?></div>
 
         <div><?php include 'alertSession.php'; ?></div>

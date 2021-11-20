@@ -149,9 +149,14 @@ $getOfficers = mysqli_query($db, "SELECT * FROM officers WHERE id=$id");
             <div class="bg-white px-3 py-5 md:p-5 lg:px-5 mx-5 my-3 overflow-auto example custom-xl" style="max-width: 500px;">
                 <div class="flex justify-between items-center pb-8">
                     <h1 class="font-semibold text-gray-600 text-xl">Update officer</h1>
-                    <a href="../officers">
-                        <i class="fas fa-close text-gray-300 cursor-pointer"></i>
-                    </a>
+                   <div class="flex items-center gap-5">
+                        <a href="process.php?del=<?php echo $row['id'];?>" name="del">
+                            <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-400 transition-all" style="font-size: 13px" onclick="toggleModal('view_event')"></i>
+                        </a>
+                        <a href="../officers">
+                            <i class="fas fa-close text-gray-300 cursor-pointer"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="overflow-y-auto example" style="height: 470px">
                     <form action="../officers/process.php" method="post" class="space-y-2 text-sm md:text-base lg:text-base" enctype="multipart/form-data">
