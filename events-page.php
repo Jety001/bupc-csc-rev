@@ -169,7 +169,7 @@
                     <div class="h-0.5 w-28 bg-blue-200"></div>
                 </div>
                 <div class="flex md:gap-10 lg:gap-10">
-                    <div class="bg-gray-50 rounded-2xl p-9 shadow-sm w-full md:w-80 lg:w-80 space-y-3">
+                    <div class="bg-gray-50 rounded-2xl p-9 shadow-sm w-full md:w-80 lg:w-80 space-y-3" style="width:600px; height: 290px">
                         <div><p class="text-4xl font-extrabold">Hi, Students!</p></div>
                         <div><small class="text-gray-400 text-sm">Here you can see the list of events that the BUPC CSC will held. See below the list of events today or the upcomming events.</small></div>
                         <div class="pt-3 flex items-center gap-3">
@@ -297,9 +297,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full absolute right-2 opacity-10 md:w-96 lg:w-96 md:relative lg:relative md:opacity-100 lg:opacity-100">
+                    <!-- <div class="w-full absolute right-2 opacity-10 md:w-96 lg:w-96 md:relative lg:relative md:opacity-100 lg:opacity-100">
                         <img src="./images/events-show.png" class="w-full" alt="">
-                    </div>
+                    </div> -->
                 </div>
             </div>
             
@@ -492,9 +492,9 @@
                         </div>
                     </div>
                  </div>
-                <div class="hidden md:flex lg:flex">
+                <!-- <div class="hidden md:flex lg:flex">
                     <img src="./images/show1.png" alt="" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);">
-                </div>
+                </div> -->
              </div>
         </div>
     </div>
