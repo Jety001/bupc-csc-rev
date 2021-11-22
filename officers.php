@@ -1,6 +1,9 @@
 <?php session_start(); ?>
 <?php
       include('./conn.php');
+      $getDean = mysqli_query($db, "SELECT * FROM officers WHERE position='Dean'");
+      $getAD = mysqli_query($db, "SELECT * FROM officers WHERE position='Associate Dean'");
+      $getAdviser = mysqli_query($db, "SELECT * FROM officers WHERE position='Adviser'");
       $getPres = mysqli_query($db, "SELECT * FROM officers WHERE position='President'");
       $getVP = mysqli_query($db, "SELECT * FROM officers WHERE position='Vice President'");
       $getSec = mysqli_query($db, "SELECT * FROM officers WHERE position='Secretary'");
@@ -8,17 +11,18 @@
       $getAud = mysqli_query($db, "SELECT * FROM officers WHERE position='Auditor'");
       $getBM = mysqli_query($db, "SELECT * FROM officers WHERE position='Business Manager'");
       $getPio = mysqli_query($db, "SELECT * FROM officers WHERE position='P.I.O'");
-      $getRep1 = mysqli_query($db, "SELECT * FROM officers WHERE id=8");
-      $getRep2 = mysqli_query($db, "SELECT * FROM officers WHERE id=9");
-      $getRep3 = mysqli_query($db, "SELECT * FROM officers WHERE id=10");
-      $getRep4 = mysqli_query($db, "SELECT * FROM officers WHERE id=11");
-      $getRep5 = mysqli_query($db, "SELECT * FROM officers WHERE id=12");
-      $getRep6 = mysqli_query($db, "SELECT * FROM officers WHERE id=13");
-      $getRep7 = mysqli_query($db, "SELECT * FROM officers WHERE id=14");
-      $getRep8 = mysqli_query($db, "SELECT * FROM officers WHERE id=15");
-      $getRep9 = mysqli_query($db, "SELECT * FROM officers WHERE id=16");
-      $getRep10 = mysqli_query($db, "SELECT * FROM officers WHERE id=17");
-      $getRep11 = mysqli_query($db, "SELECT * FROM officers WHERE id=18");
+      $getRepresentative = mysqli_query($db, "SELECT * FROM officers WHERE position='Representative'");
+      // $getRep1 = mysqli_query($db, "SELECT * FROM officers WHERE id=8");
+      // $getRep2 = mysqli_query($db, "SELECT * FROM officers WHERE id=9");
+      // $getRep3 = mysqli_query($db, "SELECT * FROM officers WHERE id=10");
+      // $getRep4 = mysqli_query($db, "SELECT * FROM officers WHERE id=11");
+      // $getRep5 = mysqli_query($db, "SELECT * FROM officers WHERE id=12");
+      // $getRep6 = mysqli_query($db, "SELECT * FROM officers WHERE id=13");
+      // $getRep7 = mysqli_query($db, "SELECT * FROM officers WHERE id=14");
+      // $getRep8 = mysqli_query($db, "SELECT * FROM officers WHERE id=15");
+      // $getRep9 = mysqli_query($db, "SELECT * FROM officers WHERE id=16");
+      // $getRep10 = mysqli_query($db, "SELECT * FROM officers WHERE id=17");
+      // $getRep11 = mysqli_query($db, "SELECT * FROM officers WHERE id=18");
       
 ?>
 <!DOCTYPE html>
@@ -77,7 +81,7 @@
         }
 
    </style>
-  <title>CSC Officers</title>
+  <title>CSC Organizational Chart</title>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 </head>
@@ -148,10 +152,44 @@
 
     <div class="container mx-auto" id="officers" >
     <div class="p-8">
-      <h1 class="text-center text-3xl font-extrabold text-gray-900">CSC <span  class="text-yellow-500">Officers</span ></h1>
+      <h1 class="text-center text-3xl font-extrabold text-gray-900">CSC <span  class="text-yellow-500">Organizational Chart</span ></h1>
     </div>
     <div class="flex justify-center ">
         <div class="text-center ">
+          <?php while ($row = mysqli_fetch_array($getDean)) { ?>
+            <div class=" flex justify-center">
+                <div class="bg-gray-400 p-4 m-4 text-center">
+                  <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" alt="" style="width: 250px" >
+                  <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
+                  <p class="text-gray-700">President</p>
+                  <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
+                  <a href="tel:+639122316197"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
+                </div>
+            </div>
+          <?php } ?>
+
+           <div class="flex flex-col md:flex-row items-center gap-1 md:gap-20">
+                <?php while ($row = mysqli_fetch_array($getAD)) { ?>
+                 <div class="bg-gray-300 p-4 m-4" style="width: 280px">
+                     <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
+                     <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
+                     <p class="text-gray-700">Vice President</p>
+                     <p class="text-gray-700" ><i style="font-size:24px" class="fa">&#xf0e0;</i> </p>
+                  <p class="text-gray-700"><i class="material-icons">&#xe0cf;</i></p>
+                 </div>
+                  <?php } ?>
+                 <?php while ($row = mysqli_fetch_array($getAdviser)) { ?>
+                <div class="bg-gray-300 p-4 m-4" style="width: 280px">
+                    <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
+                    <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
+                    <p class="text-gray-700">Secretary</p>
+                    <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
+                    <a href="tel:+639959675378"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
+                </div>
+                 <?php } ?>
+            </div>
+           
+
           <?php while ($row = mysqli_fetch_array($getPres)) { ?>
             <div class=" flex justify-center">
                 <div class="bg-gray-400 p-4 m-4 text-center">
@@ -232,121 +270,19 @@
     </div>
 
         <div class="mx-auto" style="max-width: 1000px">
-           <div class="flex flex-col md:flex-row items-center md:justify-between lg:justify-between">
-                <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
-                 <?php while ($row = mysqli_fetch_array($getRep1)) { ?>
-                    <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
-                      <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
-                      <p class="text-gray-700">Representative</p>
-                      <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
-                      <a href="tel:+639488803362"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
-                  <?php }?>
-                </div>
-                  <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
-                   <?php while ($row = mysqli_fetch_array($getRep2)) { ?>
-                    <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
-                      <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
-                      <p class="text-gray-700">Representative</p>
-                      <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
-                      <a href="tel:+639488803362"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
-                  <?php }?>
-                 </div>
-                  <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
-                   <?php while ($row = mysqli_fetch_array($getRep3)) { ?>
-                    <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
-                      <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
-                      <p class="text-gray-700">Representative</p>
-                      <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
-                      <a href="tel:+639488803362"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
-                  <?php }?>
-                </div>
-           </div>
-
-              <div class="flex flex-col md:flex-row items-center md:justify-between lg:justify-between">
-                <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
-                     <?php while ($row = mysqli_fetch_array($getRep4)) { ?>
-                    <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
-                      <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
-                      <p class="text-gray-700">Representative</p>
-                      <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
-                      <a href="tel:+639488803362"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
-                  <?php }?>
-                </div>
-                               <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
-                    <?php while ($row = mysqli_fetch_array($getRep5)) { ?>
-                    <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
-                      <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
-                      <p class="text-gray-700">Representative</p>
-                      <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
-                      <a href="tel:+639488803362"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
-                  <?php }?>
-                 </div>
-                               <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
-                    <?php while ($row = mysqli_fetch_array($getRep6)) { ?>
-                    <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
-                      <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
-                      <p class="text-gray-700">Representative</p>
-                      <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
-                      <a href="tel:+639488803362"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
-                  <?php }?>
-                </div>
-           </div>
-
-                <div class="flex flex-col md:flex-row items-center md:justify-between lg:justify-between">
-                               <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
-                   <?php while ($row = mysqli_fetch_array($getRep7)) { ?>
-                    <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
-                      <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
-                      <p class="text-gray-700">Representative</p>
-                      <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
-                      <a href="tel:+639488803362"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
-                  <?php }?>
-                </div>
-                               <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
-                    <?php while ($row = mysqli_fetch_array($getRep8)) { ?>
-                    <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
-                      <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
-                      <p class="text-gray-700">Representative</p>
-                      <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
-                      <a href="tel:+639488803362"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
-                  <?php }?>
-                 </div>
-                               <div class="bg-gray-300 p-4 m-4 text-center" style="width: 277px">
-                   <?php while ($row = mysqli_fetch_array($getRep9)) { ?>
-                    <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
-                      <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
-                      <p class="text-gray-700">Representative</p>
-                      <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
-                      <a href="tel:+639488803362"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
-                  <?php }?>
-                   </div>
-           </div>
-
-                <div class="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-20">
-                  <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
-                    <?php while ($row = mysqli_fetch_array($getRep10)) { ?>
-                    <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
-                      <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
-                      <p class="text-gray-700">Representative</p>
-                      <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
-                      <a href="tel:+639488803362"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
-                  <?php }?>
-                 </div>
-                   <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
-                    <?php while ($row = mysqli_fetch_array($getRep11)) { ?>
-                    <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
-                      <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
-                      <p class="text-gray-700">Representative</p>
-                      <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
-                      <a href="tel:+639488803362"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
-                  <?php }?>
-                </div>
-           </div>
+            <div class="flex flex-wrap justify-center">
+                <?php while ($row = mysqli_fetch_array($getRepresentative)) { ?>
+                    <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
+                        <img src="<?php echo './admin/officers/upload/' . $row['picture'] ?>" class="w-full" alt="" >
+                          <p class="bg-yellow-500 uppercase mt-2"><?php echo $row['name'] ?></p>
+                          <p class="text-gray-700">Representative</p>
+                          <a href="mailto:<?php echo $row['buEmail'] ?>"><i style="font-size:24px" class="fa">&#xf0e0;</i> Send an email here.</a><br>
+                          <a href="tel:+639488803362"><i class="material-icons">&#xe0cf;</i> Phone Number</a>
+                    </div>
+                <?php }?>
+            </div>
         </div>
-      </div>
-    </div>
 
- 
 
   </div>
   <!-- footer -->

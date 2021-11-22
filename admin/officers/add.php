@@ -29,7 +29,7 @@
                         <!-- <div class="flex"> -->
                             <div class="space-y-2">
                                 <p class="text-sm">Course<span class="text-red-500">*</span></p>
-                                <select class="rounded" name="course" style="padding: 9px; width: 100%; background:#F3F4F6; font-size: 16px " required>
+                                <select class="rounded" name="course" style="padding: 9px; width: 100%; background:#F3F4F6; font-size: 16px ">
                                     <option value="" selected hidden></option>
                                     <option value="BS Automotive Technology">BS Automotive Technology</option>
                                     <option value="BS Electrical Technology">BS Electrical Technology</option>
@@ -53,7 +53,7 @@
                             <div class="flex items-center gap-3 w-full">
                                 <div class="space-y-2 w-full">
                                     <p class="text-sm">Year Level <span class="text-red-500"></span></p>
-                                    <select class="rounded" name="yearLevel" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
+                                    <select class="rounded" name="yearLevel" style="padding: 9px; width: 100%; background:#F3F4F6 ">
                                         <option value="" selected hidden></option>
                                         <option value="1st Year">1st Year</option>
                                         <option value="2nd Year">2nd Year</option>
@@ -65,6 +65,9 @@
                                     <p class="text-sm">Position<span class="text-red-500"></span></p>
                                     <select class="rounded" name="position" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
                                         <option value="" selected hidden></option>
+                                        <option value="Dean">Dean</option>
+                                        <option value="Associate Dean">Associate Dean</option>
+                                        <option value="Adviser">CSC Adviser</option>
                                         <option value="President">President</option>
                                         <option value="Vice President">Vice President</option>
                                         <option value="Secretary">Secretary</option>

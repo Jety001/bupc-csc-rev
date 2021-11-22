@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 20, 2021 at 04:38 PM
+-- Generation Time: Nov 22, 2021 at 03:07 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -121,7 +121,8 @@ INSERT INTO `logs` (`id`, `username`, `date`, `login`, `logout`) VALUES
 (1, 'Adviser', 'Wed Nov 17, 2021', '04:38: PM', '04:52 PM'),
 (2, 'Adviser', 'Wed Nov 17, 2021', '05:25: PM', NULL),
 (3, 'Adviser', 'Thu Nov 18, 2021', '02:09: PM', NULL),
-(4, 'Adviser', 'Sat Nov 20, 2021', '10:37: PM', NULL);
+(4, 'Adviser', 'Sat Nov 20, 2021', '10:37: PM', NULL),
+(5, 'Adviser', 'Mon Nov 22, 2021', '09:27: AM', NULL);
 
 -- --------------------------------------------------------
 
@@ -147,8 +148,27 @@ CREATE TABLE `officers` (
 --
 
 INSERT INTO `officers` (`id`, `name`, `position`, `course`, `yearLevel`, `buEmail`, `fb`, `picture`, `username`, `password`) VALUES
-(7, 'cdfds', 'P.I.O', 'BTLEd Information Communication Technology', '1st Year', 'dsad', 'sadasd', '', 'dsadasds', 'adasd'),
-(8, 'sda', 'Representative', 'BTLEd Information Communication Technology', '3rd Year', 'dsad', 'sad', '', 'dsad', 'asdas');
+(11, 'Mary Joy B. Catangui', 'Dean', '', '', 'ddfs', 'fdsf', '', 'sdfds', 'fsdf'),
+(12, 'Maria Mercedes Remon', 'Associate Dean', '', '', 'fdsf', 'dsfds', '', 'fsdf', 'dsfdsf'),
+(13, 'Bel L. Saminiano', 'Adviser', '', '', 'dsfsd', 'fsdfsdf', '', 'sdfsdf', 'fsdf'),
+(14, 'Joshua Boban', 'President', 'BSEd Math', '4th Year', 'sdfds', 'fsf', '', 'dsf', 'dsf'),
+(15, 'Maria Roseanne Pandaan', 'Vice President', 'BSEd English', '4th Year', 'dsadas', 'dsad', '', 'sadsa', 'dasd'),
+(16, 'Edessa Joy Legson', 'Secretary', 'BS Computer Engineering', '3rd Year', 'sadas', 'dfsf', '', 'dsfsd', 'fsdf'),
+(17, 'Bernadette Riofro Satuito', 'Treasurer', 'BTLEd Information Communication Technology', '1st Year', 'dsad', 'asdas', '', 'dsad', 'asdasd'),
+(18, 'JOsephine Marie Almuenia', 'Auditor', 'BS Computer Engineering', '1st Year', 'dsadsa', 'dasd', '', 'dsad', 'sadasd'),
+(19, 'John Boy Arellano Pante', 'Business Manager', 'BS Information System', '4th Year', 'dsad', 'sa', '', 'das', 'dsad'),
+(20, 'Hannah Paula', 'P.I.O', 'BS Computer Engineering', '3rd Year', 'dfafda', 'fsdf', '', 'fdsf', 'sdff'),
+(21, 'Tricia KAye Moya', 'Representative', 'BTLEd Home Economics', '2nd Year', 'dsf', 'sdfsd', '', 'fsdf', 'sdfsf'),
+(22, 'Stephanie Tolosa', 'Representative', 'BS Computer Engineering', '3rd Year', 'dsfsdf', 'dsfsdf', '', 'fdsfsd', 'fsdfsf'),
+(23, 'Ramius Aquiler', 'Representative', 'BS Computer Engineering', '1st Year', 'fdsf', 'dsfsdf', '', 'fdsf', 'dsfsdf'),
+(24, 'Vince Pagdagdagan', 'Representative', 'BTLEd Home Economics', '2nd Year', 'dsadas', 'dasd', '', 'dasd', 'dasdas'),
+(25, 'Jodelyn Mendoza', 'Representative', 'BS Computer Engineering', '2nd Year', 'dsadsa', 'dasd', '', 'dsadasd', 'sadasd'),
+(26, 'Riena MArie Nimo', 'Representative', 'BS Computer Engineering', '2nd Year', 'dsadas', 'dsad', '', 'dsad', 'sadasd'),
+(27, 'Stephanie Allorde', 'Representative', 'BS Computer Science', '1st Year', 'fdfsd', 'fsdf', '', 'dsf', 'sdfsdfs'),
+(28, 'Dave Sulit', 'Representative', 'BS Electrical Technology', '2nd Year', 'sadsa', 'dasd', '', 'dasd', 'asdasda'),
+(29, 'Ralph Jessie Oco', 'Representative', 'BS Computer Engineering', '2nd Year', 'dsadsad', 'sad', '', 'dasdasd', 'asdasdasddsa'),
+(30, 'Cyrill JUnne Regilme', 'Representative', 'BTLEd Home Economics', '1st Year', 'sadsa', 'dasd', '', 'dsad', 'asdas'),
+(31, 'Chinchin O. Lim', 'Representative', 'BS Automotive Technology', '1st Year', 'sadasd', 'asd', '', 'asd', 'sadasdas');
 
 -- --------------------------------------------------------
 
@@ -290,13 +310,13 @@ ALTER TABLE `financialReport`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `officers`
 --
 ALTER TABLE `officers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `otherReports`

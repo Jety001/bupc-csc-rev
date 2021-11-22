@@ -225,6 +225,10 @@ $getOfficers = mysqli_query($db, "SELECT * FROM officers WHERE id=$id");
                                     <p class="text-sm">Position<span class="text-red-500"></span></p>
                                     <select class="rounded" name="position" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
                                         <option value="<?php echo $row['position']; ?>" selected hidden><?php echo $row['position']; ?></option>
+                                        <option value="" selected hidden></option>
+                                        <option value="Dean">Dean</option>
+                                        <option value="Associate Dean">Associate Dean</option>
+                                        <option value="Adviser">CSC Adviser</option>
                                         <option value="President">President</option>
                                         <option value="Vice President">Vice President</option>
                                         <option value="Secretary">Secretary</option>
